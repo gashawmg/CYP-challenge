@@ -1,0 +1,148 @@
+#!/usr/bin/env python
+r"""The yardstick Section 69 says to train against: rho, by region, priced in ST-RAE.
+
+    python scripts\rho_yardstick.py --oof oof_mhens3.csv
+    python scripts\rho_yardstick.py --oof oof_base3a4.csv oof_surr3a4.csv --iso CYP3A4
+
+WHY THIS AND NOT MACRO ST-RAE. Macro ST-RAE on the OOF folds is dominated by placement,
+and placement is solved -- a fitted affine is optimal and nothing beats it (Section 69,
+free monotone map -0.0015 against affine, P(worse) 70.8%). Comparing two models by raw
+OOF ST-RAE therefore mostly compares two accidental placements. This script places BOTH
+arms optimally before comparing, so what is left is the ranking, which is the only thing
+training can still move.
+
+WHY REGIONS. The cost is not where we assumed. Measured on oof_mhens3:
+
+    endpoint   rho all   bottom 10%   middle 80%   top 10%   cost: bot / mid / top
+    CYP1A2      0.5898      0.0447       0.4731     0.3309    29.3% / 48.2% / 22.5%
+    CYP2C9      0.6931      0.3609       0.5635     0.2378    25.6% / 47.6% / 26.8%
+    CYP2D6      0.4721     -0.0595       0.3977     0.3066    24.9% / 49.1% / 26.0%
+    CYP3A4      0.8263      0.0190       0.7501     0.1961     3.9% / 73.4% / 22.6%
+
+The MIDDLE carries half to three quarters of the bill on every endpoint, and the middle
+is where rho is weakest. An earlier draft of Section 69 told us to optimise tail rho.
+That was wrong: the model already separates the top decile from the bottom at AUC
+0.88-0.99, so the tails are ordered nearly perfectly and are not the problem.
+
+THE EXCHANGE RATE, and the honest caveat. Synthesising a column with higher rho (mixing
+truth into the prediction) and re-placing it optimally:
+
+    rho lift   macro ST-RAE (affine-placed)   relative
+      +0.00              0.6249                  --
+      +0.10              0.4987               +20.2%
+      +0.15              0.4198               +32.8%
+
+per endpoint, +0.10 of rho buys 0.179 of CYP3A4's ST-RAE, 0.070 of CYP2C9's, 0.114 of
+CYP1A2's and 0.066 of CYP2D6's. CYP3A4 pays most per unit rho despite already having the
+highest rho, because its intervals are wide and a better ranking starts landing inside
+them. THESE ARE UPPER BOUNDS: a truth-mixed column has unnaturally well-behaved errors,
+so read the ORDERING of the endpoints, not the absolute numbers.
+"""
+from __future__ import annotations
+
+import argparse
+import sys
+from pathlib import Path
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+
+import numpy as np
+import pandas as pd
+from scipy.stats import spearmanr
+
+ROOT = Path(__file__).resolve().parent.parent
+TRAIN = ROOT / "data" / "cyp-challenge-TRAIN_inhibition.csv"
+ISO = ["CYP1A2", "CYP2C9", "CYP2D6", "CYP3A4"]
+ID = "Molecule_Name"
+
+
+def cost(p, lo, hi):
+    return np.clip(p - hi, 0, None) + np.clip(lo - p, 0, None)
+
+
+def affine_placed(p, lo, hi, y):
+    """ST-RAE after the best affine re-placement -- the comparison that is fair to both."""
+    mu = p.mean()
+    best = np.inf
+    for b in np.linspace(0.1, 3.0, 60):
+        q = b * (p - mu)
+        shifts = np.linspace(lo.min() - q.max(), hi.max() - q.min(), 400)
+        best = min(best, min(np.clip(q + s - hi, 0, None).sum()
+                             + np.clip(lo - q - s, 0, None).sum() for s in shifts))
+    return best / cost(np.full_like(y, y.mean()), lo, hi).sum()
+
+
+def hi_lo_auc(y, p):
+    a, b = np.quantile(y, 0.10), np.quantile(y, 0.90)
+    low, high = y <= a, y >= b
+    s = np.concatenate([p[low], p[high]])
+    lab = np.concatenate([np.zeros(low.sum()), np.ones(high.sum())])
+    o = np.argsort(s)
+    r = np.empty(len(s))
+    r[o] = np.arange(len(s))
+    n1 = int(lab.sum())
+    n0 = len(lab) - n1
+    return (r[lab == 1].sum() - n1 * (n1 - 1) / 2) / (n1 * n0)
+
+
+def main() -> int:
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--oof", nargs="+", required=True)
+    ap.add_argument("--iso", nargs="*", default=ISO)
+    ap.add_argument("--train", default=str(TRAIN))
+    a = ap.parse_args()
+
+    tr = pd.read_csv(a.train)
+    tr.columns = [c.strip() for c in tr.columns]
+    tr = tr.set_index(ID)
+
+    print(f"{'oof':<24}{'iso':<8}{'n':>6}{'rho':>8}{'bot':>8}{'mid':>8}{'top':>8}"
+          f"{'AUC hi|lo':>11}{'ST-RAE':>9}{'placed':>9}")
+    macro = {}
+    for f in a.oof:
+        p_ = Path(f)
+        if not p_.exists():
+            p_ = ROOT / f
+        if not p_.exists():
+            print(f"  missing: {f}")
+            continue
+        d = pd.read_csv(p_)
+        d.columns = [c.strip() for c in d.columns]
+        d = d.set_index(ID)
+        placed = []
+        for iso in a.iso:
+            c = f"{iso}_pIC50_direct_inhibition"
+            if c not in d.columns:
+                continue
+            idx = d.index.intersection(tr.index)
+            idx = idx[tr.loc[idx, c].notna() & d.loc[idx, c].notna()]
+            if len(idx) < 100:
+                continue
+            y = tr.loc[idx, c].to_numpy()
+            p = d.loc[idx, c].to_numpy()
+            lo = tr.loc[idx, c + "_conf_low"].to_numpy()
+            hi = tr.loc[idx, c + "_conf_high"].to_numpy()
+            q1, q9 = np.quantile(y, 0.10), np.quantile(y, 0.90)
+            reg = [y <= q1, (y > q1) & (y < q9), y >= q9]
+            rr = [spearmanr(y[m], p[m]).statistic for m in reg]
+            base = cost(np.full_like(y, y.mean()), lo, hi).sum()
+            raw = cost(p, lo, hi).sum() / base
+            pl = affine_placed(p, lo, hi, y)
+            placed.append(pl)
+            print(f"{p_.name:<24}{iso:<8}{len(idx):>6}{spearmanr(y, p).statistic:>8.4f}"
+                  f"{rr[0]:>8.4f}{rr[1]:>8.4f}{rr[2]:>8.4f}{hi_lo_auc(y, p):>11.4f}"
+                  f"{raw:>9.4f}{pl:>9.4f}")
+        if placed:
+            macro[p_.name] = float(np.mean(placed))
+        print()
+
+    if len(macro) > 1:
+        print("=== macro ST-RAE at the best affine placement (the fair comparison) ===")
+        ref = list(macro)[0]
+        for k, v in macro.items():
+            tag = "  <- reference" if k == ref else f"  {v - macro[ref]:+.4f} vs {ref}"
+            print(f"  {k:<28}{v:.4f}{tag}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())

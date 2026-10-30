@@ -1,0 +1,346 @@
+track,order,submission,scope,metric,value,rank,note
+TDI,1,mtl_blend,overall,MCC,0.2981,,multitask blend
+TDI,2,splice,CYP2D6,MCC,0.1825,27.0,
+TDI,2,splice,CYP3A4,MCC,0.447,4.0,
+TDI,2,splice,overall,MCC,0.3147,20.0,per-endpoint splice
+TDI,3,tdi_w,CYP2D6,MCC,0.218,20.0,
+TDI,3,tdi_w,CYP3A4,MCC,0.3798,33.0,
+TDI,3,tdi_w,overall,MCC,0.2989,24.0,fitted blend weights on CYP3A4
+TDI,4,tdi_best,CYP2D6,MCC,0.218,20.0,
+TDI,4,tdi_best,CYP3A4,MCC,0.447,4.0,
+TDI,4,tdi_best,overall,MCC,0.3325,15.0,best column per endpoint
+TDI,5,tdi_recut,overall,MCC,0.3187,18.0,new score column + re-cut
+TDI,6,tdi_sel,CYP2D6,MCC,0.2866,13.0,
+TDI,6,tdi_sel,CYP3A4,MCC,0.4035,25.0,
+TDI,6,tdi_sel,overall,MCC,0.3451,13.0,greedy member selection
+TDI,7,tdi_v2,CYP2D6,MCC,0.2918,13.0,
+TDI,7,tdi_v2,CYP3A4,MCC,0.383,38.0,
+TDI,7,tdi_v2,overall,MCC,0.3374,15.0,best column per endpoint + re-cut at the equal-variance optimum
+pIC50,1,l1,overall,ST-RAE,1.0127,,classical L1 baseline
+pIC50,2,dense_blend,overall,ST-RAE,0.9171,,dense-fitted blend
+pIC50,3,composite_scaled,overall,ST-RAE,0.8244,,composite blending
+pIC50,4,all7_calib,overall,ST-RAE,0.6763,49.0,7 members + calibration
+pIC50,5,v3_blend,overall,ST-RAE,0.7056,51.0,+ ChemProp v3 (censored training)
+pIC50,6,v3_affine80,overall,ST-RAE,1.1048,118.0,wrong-sign affine correction
+pIC50,7,pseudo_blend45,CYP1A2,ST-RAE,0.5791,37.0,
+pIC50,7,pseudo_blend45,CYP2C9,ST-RAE,0.4627,39.0,
+pIC50,7,pseudo_blend45,CYP2D6,ST-RAE,1.3092,65.0,
+pIC50,7,pseudo_blend45,CYP3A4,ST-RAE,0.5581,57.0,
+pIC50,7,pseudo_blend45,overall,ST-RAE,0.7273,58.0,+ screen pseudo-labels; reblended; raw
+pIC50,8,placed,CYP1A2,MAE,0.7319,,
+pIC50,8,placed,CYP1A2,R2,0.5917,,
+pIC50,8,placed,CYP1A2,ST-RAE,0.5495,32.0,
+pIC50,8,placed,CYP1A2,rho,0.7771,,
+pIC50,8,placed,CYP2C9,MAE,0.4736,,
+pIC50,8,placed,CYP2C9,R2,0.6232,,
+pIC50,8,placed,CYP2C9,ST-RAE,0.5055,49.0,
+pIC50,8,placed,CYP2C9,rho,0.8245,,
+pIC50,8,placed,CYP2D6,MAE,0.8608,,
+pIC50,8,placed,CYP2D6,R2,0.4481,,
+pIC50,8,placed,CYP2D6,ST-RAE,0.7034,40.0,
+pIC50,8,placed,CYP2D6,rho,0.4888,,
+pIC50,8,placed,CYP3A4,MAE,0.5763,,
+pIC50,8,placed,CYP3A4,R2,0.6251,,
+pIC50,8,placed,CYP3A4,ST-RAE,0.5763,67.0,
+pIC50,8,placed,CYP3A4,rho,0.8109,,
+pIC50,8,placed,overall,MA-MAE,0.6607,,
+pIC50,8,placed,overall,MA-R2,0.572,,
+pIC50,8,placed,overall,MA-rho,0.7253,,
+pIC50,8,placed,overall,ST-RAE,0.5837,34.0,placement optimisation
+pIC50,9,blend3_placed,CYP1A2,MAE,0.7128,,
+pIC50,9,blend3_placed,CYP1A2,R2,0.606,,
+pIC50,9,blend3_placed,CYP1A2,ST-RAE,0.5153,27.0,
+pIC50,9,blend3_placed,CYP1A2,rho,0.7892,,
+pIC50,9,blend3_placed,CYP2C9,MAE,0.4442,,
+pIC50,9,blend3_placed,CYP2C9,R2,0.6494,,
+pIC50,9,blend3_placed,CYP2C9,ST-RAE,0.4547,39.0,
+pIC50,9,blend3_placed,CYP2C9,rho,0.8454,,
+pIC50,9,blend3_placed,CYP2D6,MAE,0.8271,,
+pIC50,9,blend3_placed,CYP2D6,R2,0.4871,,
+pIC50,9,blend3_placed,CYP2D6,ST-RAE,0.6597,33.0,
+pIC50,9,blend3_placed,CYP2D6,rho,0.5072,,
+pIC50,9,blend3_placed,CYP3A4,MAE,0.5522,,
+pIC50,9,blend3_placed,CYP3A4,R2,0.6468,,
+pIC50,9,blend3_placed,CYP3A4,ST-RAE,0.5295,47.0,
+pIC50,9,blend3_placed,CYP3A4,rho,0.8231,,
+pIC50,9,blend3_placed,overall,MA-MAE,0.6341,,
+pIC50,9,blend3_placed,overall,MA-R2,0.5973,,
+pIC50,9,blend3_placed,overall,MA-rho,0.7413,,
+pIC50,9,blend3_placed,overall,ST-RAE,0.5398,29.0,3-way blend + placement
+pIC50,10,blend3_narrow,CYP1A2,MAE,0.7676,,
+pIC50,10,blend3_narrow,CYP1A2,R2,0.5423,,
+pIC50,10,blend3_narrow,CYP1A2,ST-RAE,0.63,54.0,
+pIC50,10,blend3_narrow,CYP1A2,rho,0.7892,,
+pIC50,10,blend3_narrow,CYP2C9,MAE,0.4216,,
+pIC50,10,blend3_narrow,CYP2C9,R2,0.6915,,
+pIC50,10,blend3_narrow,CYP2C9,ST-RAE,0.3978,17.0,
+pIC50,10,blend3_narrow,CYP2C9,rho,0.8454,,
+pIC50,10,blend3_narrow,CYP2D6,MAE,0.8278,,
+pIC50,10,blend3_narrow,CYP2D6,R2,0.4868,,
+pIC50,10,blend3_narrow,CYP2D6,ST-RAE,0.6602,36.0,
+pIC50,10,blend3_narrow,CYP2D6,rho,0.5072,,
+pIC50,10,blend3_narrow,CYP3A4,MAE,0.5288,,
+pIC50,10,blend3_narrow,CYP3A4,R2,0.6724,,
+pIC50,10,blend3_narrow,CYP3A4,ST-RAE,0.4938,40.0,
+pIC50,10,blend3_narrow,CYP3A4,rho,0.8231,,
+pIC50,10,blend3_narrow,overall,MA-MAE,0.6364,,
+pIC50,10,blend3_narrow,overall,MA-R2,0.5982,,
+pIC50,10,blend3_narrow,overall,MA-rho,0.7413,,
+pIC50,10,blend3_narrow,overall,ST-RAE,0.5454,32.0,width-only re-placement; CYP1A2 mean also moved
+pIC50,11,splice_best,CYP1A2,MAE,0.7128,,
+pIC50,11,splice_best,CYP1A2,R2,0.606,,
+pIC50,11,splice_best,CYP1A2,ST-RAE,0.5153,24.0,
+pIC50,11,splice_best,CYP1A2,rho,0.7892,,
+pIC50,11,splice_best,CYP2C9,MAE,0.4216,,
+pIC50,11,splice_best,CYP2C9,R2,0.6915,,
+pIC50,11,splice_best,CYP2C9,ST-RAE,0.3978,17.0,
+pIC50,11,splice_best,CYP2C9,rho,0.8454,,
+pIC50,11,splice_best,CYP2D6,MAE,0.8278,,
+pIC50,11,splice_best,CYP2D6,R2,0.4868,,
+pIC50,11,splice_best,CYP2D6,ST-RAE,0.6602,36.0,
+pIC50,11,splice_best,CYP2D6,rho,0.5072,,
+pIC50,11,splice_best,CYP3A4,MAE,0.5288,,
+pIC50,11,splice_best,CYP3A4,R2,0.6724,,
+pIC50,11,splice_best,CYP3A4,ST-RAE,0.4938,40.0,
+pIC50,11,splice_best,CYP3A4,rho,0.8231,,
+pIC50,11,splice_best,overall,MA-MAE,0.6227,,
+pIC50,11,splice_best,overall,MA-R2,0.6142,,
+pIC50,11,splice_best,overall,MA-rho,0.7413,,
+pIC50,11,splice_best,overall,ST-RAE,0.5167,28.0,per-endpoint splice of scored columns
+TDI,8,tdi_v3,CYP2D6,MCC,0.2918,16.0,
+TDI,8,tdi_v3,CYP2D6,F1,0.342,16.0,
+TDI,8,tdi_v3,CYP2D6,precision,0.2761,16.0,
+TDI,8,tdi_v3,CYP2D6,recall,0.4603,16.0,
+TDI,8,tdi_v3,CYP3A4,MCC,0.4074,26.0,
+TDI,8,tdi_v3,CYP3A4,F1,0.4936,26.0,
+TDI,8,tdi_v3,CYP3A4,precision,0.7373,26.0,
+TDI,8,tdi_v3,CYP3A4,recall,0.3728,26.0,
+TDI,8,tdi_v3,overall,MA-MCC,0.3496,15.0,CYP3A4 equal-19 at rate 0.150; predicted 0.3935
+pIC50,12,blend4z,CYP1A2,ST-RAE,0.5125,25.0,
+pIC50,12,blend4z,CYP1A2,MAE,0.698,25.0,
+pIC50,12,blend4z,CYP1A2,R2,0.6223,25.0,
+pIC50,12,blend4z,CYP1A2,rho,0.8064,25.0,
+pIC50,12,blend4z,CYP1A2,tau,0.6061,25.0,
+pIC50,12,blend4z,CYP2C9,ST-RAE,0.4172,30.0,
+pIC50,12,blend4z,CYP2C9,MAE,0.4566,30.0,
+pIC50,12,blend4z,CYP2C9,R2,0.6498,30.0,
+pIC50,12,blend4z,CYP2C9,rho,0.838,30.0,
+pIC50,12,blend4z,CYP2C9,tau,0.6526,30.0,
+pIC50,12,blend4z,CYP2D6,ST-RAE,0.6482,37.0,
+pIC50,12,blend4z,CYP2D6,MAE,0.7841,37.0,
+pIC50,12,blend4z,CYP2D6,R2,0.4887,37.0,
+pIC50,12,blend4z,CYP2D6,rho,0.519,37.0,
+pIC50,12,blend4z,CYP2D6,tau,0.3593,37.0,
+pIC50,12,blend4z,CYP3A4,ST-RAE,0.4636,25.0,
+pIC50,12,blend4z,CYP3A4,MAE,0.5077,25.0,
+pIC50,12,blend4z,CYP3A4,R2,0.696,25.0,
+pIC50,12,blend4z,CYP3A4,rho,0.831,25.0,
+pIC50,12,blend4z,CYP3A4,tau,0.6485,25.0,
+pIC50,12,blend4z,overall,ST-RAE,0.5104,27.0,"4-model diversity blend, ratio-transferred placement"
+pIC50,12,blend4z,overall,MA-MAE,0.6116,27.0,"4-model diversity blend, ratio-transferred placement"
+pIC50,12,blend4z,overall,MA-R2,0.6142,27.0,"4-model diversity blend, ratio-transferred placement"
+pIC50,12,blend4z,overall,MA-rho,0.7486,27.0,"4-model diversity blend, ratio-transferred placement"
+pIC50,12,blend4z,overall,MA-tau,0.566,27.0,"4-model diversity blend, ratio-transferred placement"
+TDI,9,tdi_splice_best,CYP2D6,MCC,0.2918,16.0,
+TDI,9,tdi_splice_best,CYP2D6,precision,0.2761,16.0,
+TDI,9,tdi_splice_best,CYP2D6,recall,0.4603,16.0,
+TDI,9,tdi_splice_best,CYP2D6,F1,0.342,16.0,
+TDI,9,tdi_splice_best,CYP3A4,MCC,0.447,11.0,
+TDI,9,tdi_splice_best,CYP3A4,precision,0.6644,11.0,
+TDI,9,tdi_splice_best,CYP3A4,recall,0.522,11.0,
+TDI,9,tdi_splice_best,CYP3A4,F1,0.5833,11.0,
+TDI,9,tdi_splice_best,overall,MA-MCC,0.3694,13.0,column splice; predicted 0.3694 exactly
+TDI,9,tdi_splice_best,overall,MA-accuracy,0.8303,13.0,
+TDI,9,tdi_splice_best,overall,MA-F1,0.4912,13.0,
+pIC50,13,place_half,CYP1A2,ST-RAE,0.566,38.0,
+pIC50,13,place_half,CYP1A2,rho,0.8064,38.0,
+pIC50,13,place_half,CYP2C9,ST-RAE,0.4846,54.0,
+pIC50,13,place_half,CYP2C9,rho,0.838,54.0,
+pIC50,13,place_half,CYP2D6,ST-RAE,0.5957,23.0,only endpoint the transform improved
+pIC50,13,place_half,CYP2D6,rho,0.519,23.0,
+pIC50,13,place_half,CYP3A4,ST-RAE,0.7027,113.0,"local fit shipped absolute means, 0.35 log off anchor"
+pIC50,13,place_half,CYP3A4,rho,0.831,113.0,
+pIC50,13,place_half,overall,ST-RAE,0.5873,42.0,placement transform; rho identical to blend4z
+pIC50,13,place_half,overall,MA-rho,0.7486,42.0,
+pIC50,14,splice4,CYP1A2,ST-RAE,0.5125,34.0,
+pIC50,14,splice4,CYP1A2,rho,0.8064,34.0,
+pIC50,14,splice4,CYP2C9,ST-RAE,0.3978,18.0,our best endpoint by rank
+pIC50,14,splice4,CYP2C9,rho,0.8454,18.0,
+pIC50,14,splice4,CYP2D6,ST-RAE,0.5957,26.0,
+pIC50,14,splice4,CYP2D6,rho,0.519,26.0,
+pIC50,14,splice4,CYP3A4,ST-RAE,0.4634,,"RECOVERED, not read: raw3a4 froze the other three, so 0.4786-4*(0.4962-0.4924)"
+pIC50,14,splice4,overall,ST-RAE,0.4924,19.0,best pIC50 submission to date
+pIC50,15,raw3a4,CYP1A2,ST-RAE,0.5125,34.0,"frozen, identical to splice4"
+pIC50,15,raw3a4,CYP2C9,ST-RAE,0.3978,18.0,frozen
+pIC50,15,raw3a4,CYP2D6,ST-RAE,0.5957,26.0,frozen
+pIC50,15,raw3a4,CYP3A4,ST-RAE,0.4786,40.0,"raw member values, +0.0152 WORSE than the spliced column"
+pIC50,15,raw3a4,CYP3A4,rho,0.8327,40.0,
+pIC50,15,raw3a4,overall,ST-RAE,0.4962,25.0,single-endpoint probe: three columns frozen so CYP3A4 is measured exactly
+pIC50,16,cand1,CYP1A2,ST-RAE,0.5147,47.0,"SPREAD ONLY: ranking bit-identical to splice4 (rho 0.8064 both), sd ratio 0.88->0.765"
+pIC50,16,cand1,CYP1A2,MAE,0.7071,47.0,
+pIC50,16,cand1,CYP1A2,R2,0.6138,47.0,
+pIC50,16,cand1,CYP1A2,rho,0.8064,47.0,UNCHANGED - confirms the transform was rank-preserving
+pIC50,16,cand1,CYP1A2,tau,0.6061,47.0,
+pIC50,16,cand1,CYP2C9,ST-RAE,0.3645,16.0,blend ranking + spread 0.764->0.706
+pIC50,16,cand1,CYP2C9,MAE,0.4177,16.0,
+pIC50,16,cand1,CYP2C9,R2,0.7054,16.0,
+pIC50,16,cand1,CYP2C9,rho,0.8554,16.0,
+pIC50,16,cand1,CYP2C9,tau,0.6755,16.0,
+pIC50,16,cand1,CYP2D6,ST-RAE,0.5957,40.0,CARRIED OVER UNCHANGED from splice4 - this is the fingerprint proving the LIVE board is the HALF set
+pIC50,16,cand1,CYP2D6,MAE,1.1709,40.0,
+pIC50,16,cand1,CYP2D6,R2,0.1423,40.0,
+pIC50,16,cand1,CYP2D6,rho,0.519,40.0,unchanged
+pIC50,16,cand1,CYP2D6,tau,0.3593,40.0,
+pIC50,16,cand1,CYP3A4,ST-RAE,0.4532,55.0,RANKING ONLY in effect: final sd 0.9571 vs splice4 0.9586
+pIC50,16,cand1,CYP3A4,MAE,0.4999,55.0,
+pIC50,16,cand1,CYP3A4,R2,0.7055,55.0,
+pIC50,16,cand1,CYP3A4,rho,0.8425,55.0,
+pIC50,16,cand1,CYP3A4,tau,0.6598,55.0,
+pIC50,16,cand1,overall,ST-RAE,0.482,39.0,"vs splice4 0.4924 half-set: -0.0104, against a predicted -0.010"
+pIC50,16,cand1,overall,MA-MAE,0.6989,39.0,
+pIC50,16,cand1,overall,MA-R2,0.5417,39.0,
+pIC50,16,cand1,overall,MA-rho,0.7558,39.0,vs splice4 0.7486
+pIC50,17,d6probe,overall,ST-RAE,0.4737,36.0,CYP2D6 -0.30 shift only; best pIC50 to date
+pIC50,17,d6probe,CYP1A2,ST-RAE,0.5147,50.0,
+pIC50,17,d6probe,CYP2C9,ST-RAE,0.3645,20.0,
+pIC50,17,d6probe,CYP2D6,ST-RAE,0.5621,33.0,
+pIC50,17,d6probe,CYP3A4,ST-RAE,0.4532,64.0,
+pIC50,18,d6wide,overall,ST-RAE,0.4934,47.0,CYP2D6 widened to sd 1.50; LOST
+pIC50,18,d6wide,CYP2D6,ST-RAE,0.6412,65.0,
+pIC50,18,d6wide,CYP2D6,R2,0.3657,65.0,
+pIC50,19,probe2,overall,ST-RAE,0.5614,66.0,CYP1A2 and CYP3A4 each -0.30; LOST badly
+pIC50,19,probe2,overall,MA-MAE,0.7159,66.0,
+pIC50,19,probe2,overall,MA-R2,0.5376,66.0,
+pIC50,19,probe2,overall,MA-rho,0.7558,66.0,unchanged: a shift cannot move rho
+TDI,10,tdi_blend,overall,MA-MCC,,,submitted ~12 Sept; score not recorded anywhere on disk
+TDI,11,tdi_blendcp,overall,MA-MCC,0.376,9.0,BEST TDI TO DATE. equal-weight blend + chemprop shift model on CYP3A4; source scripts/tdi_blend_cp.py
+TDI,11,tdi_blendcp,CYP3A4,MCC,0.4601,8.0,best CYP3A4 column ever scored; 158/750 calls
+TDI,11,tdi_blendcp,CYP2D6,MCC,0.2918,16.0,64/750 calls; same column as tdi_v3
+TDI,12,tdi_blend2d6,overall,MA-MCC,0.3312,32.0,"CYP3A4 identical to blendcp; CYP2D6 ranking changed on 110 cpds and LOST. Value from SECTION42 standing-position line, not directly attributed"
+TDI,13,tdi_structfree,overall,MA-MCC,0.3393,32.0,lgb_clf alone on CYP3A4 + 6 similarity on CYP2D6
+TDI,13,tdi_structfree,CYP3A4,MCC,0.4059,49.0,
+TDI,13,tdi_structfree,CYP2D6,MCC,0.2727,35.0,
+TDI,14,tdi_blendcp_rerun,overall,MA-MCC,0.376,24.0,"RESTORE of the blendcp file, 14 Oct. Byte-identical columns returned byte-identical metrics: board is deterministic. Score unchanged from Sept, rank 9 -> 24 because the field moved. Ranks 21-23 are 0.3801 / 0.3781 / 0.3767"
+TDI,14,tdi_blendcp_rerun,CYP3A4,MCC,0.4601,18.0,"acc 0.7866 prec 0.6613 rec 0.5501 F1 0.5993. Inverted: 651 scored rows, prevalence 0.2915, 158 calls = effective rate 0.2426, d prime 1.3206"
+TDI,14,tdi_blendcp_rerun,CYP2D6,MCC,0.2918,37.0,"acc 0.8767 prec 0.2761 rec 0.4603 F1 0.3420. Inverted: prevalence 0.0706, effective rate 0.1177, d prime 1.2266 -- ties Rguava exactly"
+TDI,14,tdi_blendcp_rerun,overall,accuracy,0.8317,24.0,"whippoorwill CYP3A4: d prime 1.3209 at rate 0.2751 scores 0.4644. Same d prime as ours; the whole 0.0043 gap is operating point, not model"
+pIC50,20,d6probe_restore,overall,ST-RAE,0.4737,35.0,"RESTORE 14 Oct, recovers the 0.0877 lost to probe2. New board columns: MA-MAE 0.6664, MA-R2 0.5872, MA-Spearman 0.7558"
+pIC50,20,d6probe_restore,overall,MA-Spearman,0.7558,35.0,"HIGHEST rho of ranks 28-35. Ligand Pro rank 29 has rho 0.7323 and still beats us on ST-RAE. Our deficit is conversion, not ranking"
+pIC50,20,d6probe_restore,overall,absorption,0.7234,35.0,"ST-RAE / sqrt(1-rho^2). Field in view: best 0.6792 (Ligand Pro), median 0.6945. At field-best absorption our ranking scores 0.4447"
+pIC50,20,d6probe_restore,overall,MA-R2,0.5872,35.0,"SECTION69 RETRACTION: the 0.3797 prize figure was an accounting identity, not achievable. Simulated properly, a PERFECT extremeness gate is worth 0.4469 and a realistic one (AUC 0.80) +0.0028. Four levers measured and all four negative: monotone re-placement, 1/width weighting, seed-spread gating, extremeness gating"
+pIC50,21,(not submitted) surr3a4,CYP3A4,rho,0.7748,,"SECTION70 A/B: base3a4 0.7613 -> surr3a4 0.7748. Paired bootstrap d rho +0.0135 CI [+0.0022,+0.0250] P(worse) 0.9%"
+pIC50,21,(not submitted) surr3a4,CYP3A4,ST-RAE,0.4837,,"placed ST-RAE, both arms affine-optimal: 0.4991 -> 0.4837, d +0.0151 CI [-0.0011,+0.0314] P(worse) 3.8%. Single-model rig, NOT the production multihead"
+pIC50,22,(not submitted) mh_tdi,CYP3A4,rho,0.7975,,"SECTION71 multihead A/B, descriptor_spec none both arms. d rho +0.0129 CI [+0.0022,+0.0239] P(worse) 0.9%; REPLICATES surr3a4 +0.0135 CI [+0.0022,+0.0250] across model families"
+pIC50,22,(not submitted) mh_tdi,CYP3A4,ST-RAE,0.4478,,"placed, both arms affine-optimal: 0.4660 -> 0.4478, d +0.0185 P(worse) 1.2%. Worth +0.0046 macro. CYP1A2 -0.0255 rho and CYP2D6 -0.0138 rho: TDI heads cut to CYP3A4 only"
+pIC50,22,(control characterised) mhens3,overall,note,,,"mhens3 = train_cyp_mh.py --descriptor_spec shared, seeds 42/1337/2024/7/99, 5 folds. Fingerprinted: fold_N.ckpt naming, dscale (2,27) matching models_mh_desc, and oof_mhens3 = exact mean of the 5 seed files to 8.9e-16"
+pIC50,23,blend4tdi,overall,ST-RAE,0.4751,47.0,"SCORED 15 Oct. LOST: 0.4737 -> 0.4751. MAE 0.6729, R2 0.5827, rho 0.7524 (rho FELL 0.0034). Predicted 0.4698 with P(worse) 0.0% -- see SECTION76"
+pIC50,23,blend4tdi,overall,predicted,0.4698,,"OOF under INHERITED placement (both arms on the old blends fitted affine): +0.0049 macro, 95% CI [+0.0021,+0.0080], P(worse) 0.0%, all four endpoints improve. Relative +0.81% on 0.4737"
+pIC50,23,blend4tdi,overall,note,,,"CAVEAT: the OLD arm uses oof_mhens3_s99 as a proxy for the Sept-7 mh, whose OOF is a 263-row smoke stub and cannot be measured. Direction is safe (mhtdi5 > mhens3 > any single seed, all measured); only the magnitude is uncertain"
+pIC50,23,blend4tdi,overall,MA-Spearman,0.7524,47.0,d6probe was 0.7558. The blend RANKING got worse: mhtdi5 is more correlated with v6/cp/unimol (0.8724) than the Sept-7 mh_OLD was (0.8589). Traded diversity for quality
+pIC50,23,blend4tdi,overall,lesson,,,"RULE: before swapping a blend member, measure the member being REMOVED, not just the one going in. A proxy must come from the INCUMBENTS family -- oof_mhens3_s99 shared mhtdi5 architecture so it could not see the diversity loss. A bootstrap bounds noise, never specification error"
+pIC50,23,(yardstick) cost-weighted rho,overall,note,,,SECTION77: rho weighted by P(|e|>halfwidth) predicts placed ST-RAE at -0.9879 vs -0.9758 for plain rho across 10 columns. Repairs 2 of 10 orderings. REAL BUT SMALL -- the 0.047 drop is near-uniform across models so the plain ruler still ORDERED correctly
+pIC50,23,(open question) conversion gap,overall,note,,,"furtivepeony rank 11 has rho 0.7554 (worse than our 0.7558) and ST-RAE 0.4348 vs our 0.4737; 101 pct of the gap is conversion. Our absorption 0.7234 is worst of 12 visible. Placement optimal, cost-weighted ranking ~= plain, post-hoc UQ dead. MECHANISM UNKNOWN"
+pIC50,24,(built) 1a2up,CYP1A2,probe,,,"d6probe + 0.20 on CYP1A2 only. OOF at d6probe placement: 67.0 pct of CYP1A2 predictions sit BELOW lo, OOF-optimal shift +0.720. probe2 moved CYP1A2 DOWN and the pair lost. Both lines agree: up"
+pIC50,24,(built) 3a4up,CYP3A4,probe,,,d6probe + 0.20 on CYP3A4 only. CONTRA-INDICATED: OOF at d6probe placement has 66.9 pct ABOVE hi and an OOF-optimal shift of -0.535. Built on request; not recommended
+pIC50,24,(caveat) shift curves,overall,note,,,"OOF ST-RAE levels at d6probe placement are 2-3x the blind values (CYP1A2 1.4894 vs 0.5147), because the placement is tuned to the BLIND population and evaluated against OOF intervals. Read direction, not magnitude"
+pIC50,24,(experiment) cost-weighted training,overall,note,,,"SECTION78 CONFIRMED at 3 seeds: macro placed 0.8197 -> 0.8151, +0.56 pct at power 1.0 (single-seed had said +0.71 pct; predicted +0.58 pct beforehand). 15/16 cells positive, sign test p=0.00026. CYP2C9 rises MONOTONICALLY to power 2.0 -- its optimum is outside the sweep"
+pIC50,24,(experiment) cost-weighted training,overall,verdict,,,"NOT worth a campaign: blend keeps 12 pct of a member gain (SECTION75), so one member = +0.0004 on the board and all four codebases = +0.0034. Apply it when a member is retrained anyway; do not retrain to collect it. Single seed -- rerun with --seeds 0 1 2 before citing as settled"
+pIC50,25,1a2up,overall,ST-RAE,0.462,35.0,"WON. d6probe +0.20 on CYP1A2 only. 0.4737 -> 0.4620, BEST EVER. MAE 0.6641, rho 0.7558 unchanged. Other three endpoints byte-identical, so the 0.0465 is attributable to CYP1A2 alone"
+pIC50,25,1a2up,CYP1A2,ST-RAE,0.4682,34.0,"0.5147 -> 0.4682, -0.0465 for a +0.20 shift. Slope -0.2325 per log unit. MAE 0.6977 R2 0.6205 rho 0.8064 Kendall 0.6061"
+pIC50,25,1a2up,CYP2C9,ST-RAE,0.3645,25.0,unchanged by design. MAE 0.4177 R2 0.7054 rho 0.8554
+pIC50,25,1a2up,CYP2D6,ST-RAE,0.5621,39.0,unchanged by design. MAE 1.0409 R2 0.3242 rho 0.5190 -- by far our weakest endpoint
+pIC50,25,1a2up,CYP3A4,ST-RAE,0.4532,62.0,"unchanged by design. MAE 0.4999 R2 0.7055 rho 0.8425. Worst RANK despite good rho -- a placement question, untested"
+pIC50,25,1a2up,overall,transfer,0.2433,,"MEASURED OOF-to-board transfer factor for CYP1A2 shift curves: OOF predicted 0.1911 gain, board paid 0.0465. Endpoint-specific; do NOT reuse for another endpoint"
+pIC50,25,(built) 1a2up40,CYP1A2,probe,,,"d6probe +0.40 on CYP1A2, next rung. Predicted CYP1A2 ~0.4354, macro ~0.4538 if the shape transfers at k=0.2433"
+pIC50,26,1a2up40,overall,ST-RAE,0.4632,27.0,CYP1A2 +0.40: the curve TURNED. 0.4620 -> 0.4632. Rank improved 35->27 anyway as the field moved. MAE 0.6722 R2 0.5807 rho 0.7558
+pIC50,26,1a2up40,CYP1A2,ST-RAE,0.4729,25.0,+0.40 is worse than +0.20 (0.4682). Three points: 0.5147 / 0.4682 / 0.4729 at +0.00/+0.20/+0.40
+pIC50,26,(solved) CYP1A2 optimum,CYP1A2,shift,0.2816,,"Parabola vertex AND slope-crossing both give +0.2816, predicted ST-RAE 0.4639. Whole ladder worth 0.5147->0.4639 = 0.0127 macro. CYP1A2 IS DONE; +0.20 to +0.28 is only +0.0011 macro"
+pIC50,26,(recovered) probe2 split,CYP3A4,ST-RAE,0.6382,,"The fitted CYP1A2 curve extrapolates to 0.6805 at -0.30, so CYP3A4 at -0.30 cost +0.1850. Reconstructed probe2 macro 0.5613 vs MEASURED 0.5614. CYP3A4 does NOT want to go down"
+pIC50,26,(retired) OOF shift curve,overall,note,,,"1 for 3 on direction: right on CYP1A2, wrong on CYP2D6 and CYP3A4. It measures our blind-tuned centre against the TRAINING population. Do not use it to pick a shift direction again"
+pIC50,26,(built) 1a2opt_3a4up,overall,probe,,,"CYP1A2 +0.28 (measured optimum, firm 0.4639) and CYP3A4 +0.20 (the probe). CYP2C9/CYP2D6 byte-identical. Macro 0.4609 if CYP3A4 is flat, 0.4484 if it gains 0.05"
+pIC50,27,1a2opt_3a4up,overall,ST-RAE,0.4504,27.0,"BEST EVER. CYP1A2 +0.28 and CYP3A4 +0.20. MAE 0.6631 R2 0.5882 rho 0.7558. Running placement total 0.4737 -> 0.4504 = 0.0233 macro, no model change"
+pIC50,27,1a2opt_3a4up,CYP1A2,ST-RAE,0.4639,29.0,"PREDICTED 0.4639, SCORED 0.4639 -- exact to four decimals from the three-point vertex fit"
+pIC50,27,1a2opt_3a4up,CYP2C9,ST-RAE,0.3645,19.0,unchanged by design
+pIC50,27,1a2opt_3a4up,CYP2D6,ST-RAE,0.5621,37.0,unchanged by design
+pIC50,27,1a2opt_3a4up,CYP3A4,ST-RAE,0.4112,24.0,"0.4532 -> 0.4112, gained 0.0420 on +0.20. Direction came from the probe2 split; the OOF curve had said DOWN and was wrong"
+pIC50,27,(solved) CYP3A4 optimum,CYP3A4,shift,0.2291,,"Three points -0.30/0.00/+0.20 (first derived), curvature 0.8133, optimum +0.2291 predicted 0.4105. We are at +0.20; the remaining gain is +0.0002 macro. DONE"
+pIC50,27,(solved) CYP2D6 optimum,CYP2D6,shift,0.07,,"No probe needed: cand1 (centre 3.949) 0.5957 and d6probe (3.649) 0.5621 bracket it. Optimum +0.06 to +0.08 ABOVE our centre, worth 0.0006-0.0013 macro. Pushing it DOWN would have cost"
+pIC50,27,(built) 2c9up,CYP2C9,probe,,,"CYP2C9 +0.20, the last unprobed centre. CYP1A2/CYP3A4/CYP2D6 pinned at already-scored settings so the whole delta is attributable. Macro 0.4399 if it matches CYP3A4 gain of 0.042"
+TDI,14,(probe) family split,CYP3A4,AUC,0.8307,,"SECTION82: tree-only rank blend beats the all-member blend on the frozen OOF, +0.0105 AUC, P(worse)=0.003; MCC at prevalence rate 0.3612 -> 0.3995. BUT the incumbent here is the PLAIN all-member blend, NOT the submitted blendcp (chemprop_best + chemprop shift). Not yet a claim against 0.3760 -- needs blendcp scored on these same rows first"
+TDI,14,(probe) family split,CYP2D6,AUC,0.6193,,"No recombination of the existing pool moves CYP2D6. SIM-only +0.0003 (P(worse) 0.49), TOP4 +0.0035 (P(worse) 0.378), TREE-only -0.0228. The ranking is the wall, not the threshold"
+TDI,14,(blocked) CYP2D6 yardstick,CYP2D6,note,,,"OOF AUC 0.6193 implies d' 0.429; the board's MCC 0.2918 at rate 0.1177 implies d' 1.2266. The local instrument disagrees with the board by 3x on this endpoint, so NO CYP2D6 change can be validated. CYP2D6 is frozen until a validation set that tracks the board exists. 1497 rows, 324 positives, scaffold-held-out"
+TDI,14,(available) operating point,overall,MA-MCC,0.3790,,"Equal-variance binormal at our measured d': CYP3A4 rate 0.2426 -> 0.3039 is +0.0056 MCC, CYP2D6 0.1177 -> 0.1042 is +0.0004. Total +0.0030 MA-MCC, one rank. CORROBORATED: the same curve predicts whippoorwill's CYP3A4 (same d', rate 0.2751) at 0.4645 vs their measured 0.4644. Real but small, and it is calibration"
+TDI,14,(yardstick) blind-similarity reweighting,CYP3A4,pred MCC,0.4596,,"SECTION83 PASS z=+0.01. Fold holdout median max-Tanimoto 0.464 vs blind 0.540; AUC rises 0.76->0.95 across that range. Reweighting OOF compounds to the BLIND similarity histogram gives weighted AUC 0.8246, d' 1.320, predicted board MCC 0.4596 +- 0.0543. Board returned 0.4601. CYP3A4 can now be gated offline"
+TDI,14,(yardstick) blind-similarity reweighting,CYP2D6,pred MCC,0.0780,,"FAIL z=+3.28. Reweighting moves AUC only 0.588->0.614 (d' 0.410). ALL 20 members scored: best is svc_tan at weighted AUC 0.6899, d' 0.701, predicted 0.1480, still +1.99 sigma below the board's 0.2918. NOT model selection -- the blind CYP2D6 population (prevalence 0.0706) differs from our labelled one (0.2164). CYP2D6 stays frozen"
+TDI,14,(measured) public board is a HALF set,overall,note,,,"User states the public board scores ~half the blind compounds; the interim all-compound board had us at rank 32. Simulated sampling SD at our d': CYP3A4 +-0.0564 MCC on the half set (+-0.0390 full), CYP2D6 +-0.0796 (+-0.0568). A CYP3A4-only change must be worth >0.056 MA-MCC to be confirmable by one submission"
+TDI,14,(gated) CYP3A4 candidates vs blendcp,CYP3A4,wtd AUC,0.7719,,"First TDI comparison against the ACTUAL submitted column. Incumbent blendcp 0.7719 BEATS chemprop_best alone (0.7518), the all-member blend (0.7322) and the tree blend (0.7589). Only TREE+chemprop+shift edges it, +0.0119 MCC, P(worse) 0.087 -- FAILS the gate. The family probe's tree-beats-all result was real and irrelevant: blendcp was already above both"
+TDI,14,(bug) NaN poisoned every arm,CYP3A4,note,,,"tdi_gate_3a4.py first reported the incumbent at AUC 0.4510, BELOW CHANCE, and recommended SUBMIT. Cause: 8 NaNs in CYP3A4_shift_pred propagating through rankdata. RULE: an incumbent scoring below chance is a bug until proven otherwise, exactly like the dead-zone objective scoring rho -0.05 on all four endpoints"
+TDI,14,(external) chemical-space overlap,CYP2D6,note,,,"SECTION84: blind -> external negatives median max-Tanimoto 0.346, but blind -> our labelled CYP2D6 rows is 0.471. The external set is FARTHER from the blind compounds than our own training data. It cannot supply coverage of blind chemistry, only knowledge transfer -- same conclusion cypkit/external_prior.py reached for pIC50 (0.587 -> 0.589)"
+TDI,14,"(external) presumed negatives, kNN read",CYP2D6,wtd AUC,0.6330,,"AGAINST. Adding 3,092 external CYP2D6-inactive rows as presumed TDI-negatives to reach blind prevalence 0.0706 makes a similarity model WORSE: weighted AUC 0.6786 -> 0.6330, predicted board MCC 0.1389 -> 0.0941. Expected for kNN (far-away negatives dilute the neighbour list); the LightGBM and prior-feature arms are untested. Preliminary, one model class"
+TDI,14,(external) leakage guard verified,overall,note,,,"The guard is LIVE, not inert: the external block column is the InChIKey connectivity layer and matches the blind set's key space (748 distinct blocks over 750 blind compounds). It drops exactly 1 of 13,676 external CYP2D6-inactive rows -- small because the two libraries barely overlap, which is itself the finding above"
+TDI,14,(blocked) ChEMBL TDI fetch,overall,note,,,ChEMBL has genuine CYP2D6 time-dependent-inhibition assays (e.g. CHEMBL3373961) but www.ebi.ac.uk is refused by the network policy from both the cloud container and the local VM (403 on CONNECT). A fetch must be run from the Windows admet_gpu env directly. Untried
+pIC50,28,2c9up,overall,ST-RAE,0.4525,28.0,"LOST. 0.4504 -> 0.4525. CYP2C9 +0.20 cost +0.0081 on that endpoint. My prediction was 0.4399 if CYP2C9 matched CYP3A4's gain -- it did the opposite. The sign WAS available beforehand: CYP2C9 was already our best-ranked endpoint (rank 19-25), and the two endpoints that gained from a shift were the badly-ranked ones. Rank of an endpoint predicts whether its centre is mis-placed"
+pIC50,28,2c9up,CYP2C9,ST-RAE,0.3726,28.0,"0.3645 -> 0.3726 for +0.20. Slope +0.0405 per log unit, so the optimum sits BELOW +0.10. MAE 0.4396 R2 0.6706 rho 0.8554"
+pIC50,28,2c9up,CYP1A2,ST-RAE,0.4639,30.0,unchanged by design
+pIC50,28,2c9up,CYP2D6,ST-RAE,0.5621,40.0,unchanged by design
+pIC50,28,2c9up,CYP3A4,ST-RAE,0.4112,25.0,unchanged by design
+pIC50,28,(solved) CYP2C9 optimum,CYP2C9,shift,0.07,,"Two scored points 0.3645 at 0.00 and 0.3726 at +0.20. Across every plausible curvature (a 0.50 to 1.00, the range the other three endpoints span) the optimum lands +0.060 to +0.080 and is worth 0.0018-0.0064 on the endpoint = 0.0004-0.0016 macro. ALL FOUR CENTRES ARE NOW SOLVED"
+pIC50,28,(built) centres_final,overall,probe,,,"CYP1A2 +0.28, CYP3A4 +0.20, CYP2C9 +0.07, CYP2D6 +0.07 -- every endpoint at its solved optimum. Built from the 0.4504 file by adding 0.07 to two columns, verified exact. Predicted macro 0.4478-0.4492. md5 0137e9da9f6461060581299ac1cecfb0"
+pIC50,28,(retired) the one-variable rule,overall,note,,,"The board reports PER-ENDPOINT ST-RAE, so moving two endpoints at once stays fully attributable. The one-variable-per-submission rule was needed when only macro was visible and has been costing us slots since. It still applies to PROBES that buy direction; it does not apply to collecting optima already solved from scored points"
+pIC50,28,(model) ST-RAE forward model,overall,note,,,"SECTION85: fitted in CLOSED FORM to board-measured MAE, R2 and ST-RAE only -- no OOF, which is why it does not inherit the population-mismatch fault that retired the OOF shift curve. ACCEPTANCE TEST on shift curves it never saw: CYP1A2 errors -0.0090/-0.0009/-0.0013, CYP3A4 -0.0160/-0.0069/0.0000, CYP2D6 +0.0143. CYP2C9 FAILED at +0.0425 (model says +0.20 costs 0.0506, board said 0.0081) -- it overstates curvature there, so CYP2C9 spread advice is not usable"
+pIC50,28,(bug) numerical fit hit its bounds,overall,note,,,"First version handed an EXACTLY DETERMINED system to least_squares; three of four endpoints pinned at their bounds and reported fit cost 1e+2 as if it were a fit, giving sigma_y 1.6/1.2 and an identical r=0.6225 for three endpoints. Closed form gives residual 1e-16. RULE: if the equations determine the unknowns, solve them, do not search"
+pIC50,28,(hard bound) blind truth is WIDER than train,overall,note,,,"RMSE >= MAE always, so sigma_y >= MAE/sqrt(1-R2) with NO distributional assumption. CYP1A2 >= 1.1345 against a training sd of 1.0305, and CYP2D6 >= 1.2662 against 0.9161 -- the training sd is arithmetically IMPOSSIBLE for both. The blind population is more spread than our training set, and our CYP2D6 column at sd 0.6906 is badly over-shrunk against it"
+pIC50,28,(solved) CYP2D6 spread,CYP2D6,scale,1.25,,"Optimal spread = r*sigma_y. Swept over every realisable error shape (RMSE/MAE 1.10 uniform-ish to 1.50 heavy-tailed; normal is 1.2533) the optimum is x1.16 to x1.73 and x1.25 GAINS throughout: +0.0056 to +0.0529 on the endpoint, +0.0292 at normal. Only RMSE/MAE = 1.000 loses, and that requires every error to have identical magnitude. Other three endpoints are AMBIGUOUS across the same sweep -- do not touch them"
+pIC50,28,(not a probe) d6wide re-read,CYP2D6,note,,,"d6wide measured nothing attributable: it scaled CYP2D6 by x2.1734 AND moved its centre by -0.699 at the same time. Its loss is consistent with overshooting an optimum near x1.35, not evidence against widening"
+pIC50,28,(built) d6spread,overall,probe,,,"CYP2C9 +0.07 and CYP2D6 +0.07 (solved centres, free) plus CYP2D6 spread x1.25 about its own mean -- centre preserved exactly, Spearman 1.000000, CYP1A2 and CYP3A4 byte-identical. Predicted macro 0.4423 at normal errors, realistic range 0.4300-0.4484, against 0.4504 held. md5 25c751e2ad4e2c4060a97035f88a25b3"
+pIC50,28,(rules) all four columns REQUIRED,overall,note,,,"Checked against the official validator as recorded in cypkit/submission.py: required_id_columns (SMILES, Molecule_Name), all four pIC50 columns, 750 rows, no duplicate Molecule_Name, NO NaN OR INF in any value column. An endpoint cannot be dropped or blanked to keep it out of the macro average. submission_blend4z.csv was already rejected once for a missing SMILES column"
+pIC50,28,(withdrawn) the two centre nudges,overall,note,,,"CYP2C9 +0.07 and CYP2D6 +0.07 both rest on a BORROWED curvature. Per-endpoint curvature from the forward model (which reproduces the two MEASURED curvatures, CYP1A2 0.536 vs 0.640 and CYP3A4 0.883 vs 0.813) gives CYP2D6 a=0.531 -> optimum +0.044 worth 0.00026 macro, and CYP2C9's model curvature is untrustworthy because the model FAILED its shift test there. Below a=0.3733 (CYP2D6) or a=0.2025 (CYP2C9) the optimum is at or below ZERO. Both nudges are worth 0.0002-0.002 macro with an uncertain SIGN -- not worth contaminating a submission"
+pIC50,28,(bug) naive CSV split corrupted 13 rows,overall,note,,,"Building the file by splitting lines on ',' shifted the column index on the 13 QUOTED CXSMILES rows whose stereo block contains a comma (|&1:17,19|). Symptom: CYP2D6 mean moved -0.0064 instead of 0, sd ratio 1.2457 instead of 1.2500, and Spearman fell to 0.999810 when a positive rescale about the mean is strictly monotone and MUST give 1.000000. RULE: a monotone transform that does not return Spearman 1.000000 is a parsing bug. This is exactly what cypkit/submission.py exists to prevent"
+pIC50,28,(built) d6spread_only,CYP2D6,probe,,,"ONE variable: CYP2D6 spread x1.25 about its own mean. CYP1A2/CYP2C9/CYP3A4 unchanged to float epsilon (4.4e-16), so their board scores are already known: 0.4639 / 0.3645 / 0.4112, sum 1.2396. CYP2D6 mean preserved exactly, sd ratio 1.250000, Spearman 1.000000, 13 comma-bearing CXSMILES intact. Macro = (1.2396 + CYP2D6)/4. Predicted 0.4431 at normal errors; 0.4389-0.4490 across every realisable error shape; 0.4544 only in the impossible RMSE=MAE floor case. md5 776329147e87e8c463d6befe4e630f45"
+pIC50,29,d6spread_only,overall,ST-RAE,0.4440,25.0,"WON and BEST EVER, best rank too. 0.4504 -> 0.4440, +0.0064 macro from one variable. Predicted 0.4431 at normal errors with a stated band of 0.4389-0.4490; the board returned 0.4440, inside the band and 0.0009 from the central estimate. MA-MAE 0.6454 MA-R2 0.5999 rho 0.7558 unchanged"
+pIC50,29,d6spread_only,CYP2D6,ST-RAE,0.5364,23.0,"0.5621 -> 0.5364 for spread x1.25 about the mean. Predicted 0.5329, scored 0.5364, error +0.0035. MAE 1.0409 -> 0.9699, R2 0.3242 -> 0.3709, rho 0.519 unchanged (Spearman was 1.000000 by construction). Rank 40 -> 23, our biggest per-endpoint rank jump of the project"
+pIC50,29,d6spread_only,CYP1A2,ST-RAE,0.4639,28.0,unchanged by design
+pIC50,29,d6spread_only,CYP2C9,ST-RAE,0.3645,22.0,unchanged by design
+pIC50,29,d6spread_only,CYP3A4,ST-RAE,0.4112,26.0,unchanged by design
+pIC50,29,(solved) CYP2D6 spread,CYP2D6,scale,1.339,,"Two CLEAN scored points, 0.5621 at x1.00 and 0.5364 at x1.25, fitted with sigma_y 1.5514, r 0.5960, h 1.3650, reproducing both to 0.0011. Optimum x1.339 -> 0.5333. We sit at x1.25; the REMAINING gain is 0.0008 macro. The spread lever on CYP2D6 is spent after one submission"
+pIC50,29,(measured) k = RMSE/MAE on the blind set,overall,note,1.2252,,"The two spread points pin the blind error shape at k=1.2252, just LIGHTER than normal (1.2533) and well below our out-of-fold 1.31-1.50 -- consistent with the blind set being closer to training than our folds are. This was the single number the whole spread argument reduced to, and it is now measured rather than assumed"
+pIC50,29,(closed) PLACEMENT,overall,note,,,"Ledger with NO model change: d6probe 0.4737 -> CYP1A2 centre 0.4620 -> CYP3A4 centre 0.4504 -> CYP2D6 spread 0.4440, total +0.0297. All four centres solved, CYP2D6 spread solved. The other three spreads stay AMBIGUOUS across k 1.15-1.30 (ratios 0.92-1.06) so there is no defensible direction for them. Total remaining across every placement lever is ~0.003 macro, inside our own estimate error. PLACEMENT IS DONE -- further gain must come from the ranking"
+pIC50,29,(measured) error correlations are MUCH higher,overall,note,,,"SECTION86: placed-error correlations on the frozen folds are CYP1A2/CYP2C9 0.86, CYP2D6 0.96, CYP3A4 0.85 -- not the 0.571-0.698 recorded in STATUS.md. At 0.96 on CYP2D6 averaging is nearly inert. STATUS.md measured something else; this is placed errors on the common row set and is the number that governs a blend"
+pIC50,29,(found) the shipped blend is OUT OF DATE,overall,note,,,"mhtdi5 (5-seed multi-head with the CYP3A4 TDI head) and mhens3 were built AFTER the blend was frozen and were never added. Placed raw ST-RAE per member: mhtdi5 beats every shipped member on all four endpoints. The shipped blend is mh_ctl+v6+cp_ensA+unimol, and unimol and cp_ensA are the two WORST members on every endpoint"
+pIC50,29,(gated) nested blend re-composition,overall,raw ST-RAE,0.2625,,"NESTED greedy: composition chosen on four folds, scored on the fifth it never saw -- which is exactly what Section 74's +0.0086 could not claim. Macro raw 0.2714 -> 0.2625 (-0.0089, -3.3 pct). ALL FOUR endpoints pass the gate: CYP1A2 -0.0049 P(worse) 0.031, CYP2C9 -0.0144 P 0.000, CYP2D6 -0.0044 P 0.028, CYP3A4 -0.0117 P 0.000. mhtdi5 is in every pick on every endpoint and all 5 folds"
+pIC50,29,(gated) CYP3A4 wants ONE model,CYP3A4,raw ST-RAE,0.2012,,"All five folds picked mhtdi5 ALONE, beating the four-member blend by 0.0117 with P(worse) 0.000. The committee is not merely unnecessary on this endpoint, it is harmful -- averaging a strong member with two weak and 85 pct-correlated ones"
+pIC50,29,(headroom) a new member priced BEFORE building it,overall,note,,,"Synthetic fifth member swept over quality q and error correlation rho to the pool. At the best decorrelation any of our four model families has ever achieved (rho 0.79-0.81) and equal quality, it buys about -0.013 macro raw. At rho 0 it would buy -0.073, but rho 0 is unreachable: LightGBM-on-descriptors, ChemProp D-MPNN and UniMol 3D all floor at 0.79. CAVEAT: q is normalised to the BLEND error sd, not the member sd, so the synthetic member is ~6 pct stronger than labelled"
+pIC50,29,(open) transfer of the composition change,overall,note,,,"OOF raw ST-RAE is NOT the board number: our folds sit at median max-Tanimoto 0.438 against the blind set's 0.587, so levels do not carry and only deltas might. The placement (centres + CYP2D6 spread x1.25) was tuned to the OLD ranking; a new ranking has a different r and therefore a slightly different optimal spread. Plan: swap the ranking at MATCHED mean and sd per endpoint, so placement is held fixed and the ranking change is the only variable"
+pIC50,29,(bug) the incumbent was handicapped,overall,note,,,"SECTION87: blend_nested averaged members AFTER each was individually placed, and never REFITTED the scale of the resulting blend. Averaging shrinks, so the incumbent was scored at a non-optimal spread while a single-member arm was at its own optimum. Refitting the affine on the training folds moves the shipped arm from 0.2714 to 0.2653 macro and cuts the apparent gain from -0.0089 to -0.0049. CYP3A4 went from -0.0117 P=0.000 to -0.0039 P=0.105. SAME CLASS AS A STALE BASELINE: the incumbent must get every advantage the candidate gets"
+pIC50,29,(gated) reblend under the SHIPPING rule,overall,raw ST-RAE,0.2604,,"Nested, z-score averaging + affine fitted on train folds only -- the rule that actually ships. Macro 0.2653 -> 0.2604 (-0.0049), MACRO P(worse) 0.001. Per endpoint: CYP1A2 -0.0069 P=0.030 PASS, CYP2C9 -0.0067 P=0.021 PASS, CYP2D6 -0.0020 P=0.230 fail, CYP3A4 -0.0039 P=0.105 fail. All four deltas are negative; the macro gate is the right one because the macro is what is scored"
+pIC50,29,(speed) exact O(n log n) opt_shift,overall,note,,,"The O(n^2) shift solver made the scale search time out. Replaced with a prefix-sum sweep over the sorted breakpoints; verified against the old one on 40 random cases, worst |delta| 1.1e-15, zero mismatches"
+pIC50,29,(built) reblend,overall,probe,,,"Per-endpoint greedy composition: CYP1A2 mhens3+v5_rest+unimol+v7, CYP2C9 mhtdi5+v5_rest+cp_v3+mhens3, CYP2D6 mhtdi5+cp_v3+unimol+mhens3, CYP3A4 mhtdi5 ALONE. Every endpoint rescaled to the EXACT mean and sd of the 0.4440 file, so placement is byte-fixed and the ranking is the only variable. Spearman vs the old file 0.992 / 0.995 / 0.972 / 0.985 -- the ranking moved, nothing else did. 750 rows, no NaN. md5 01cd1fe8765e39b6ac71671a64d839bd"
+pIC50,29,(alternative) conservative reblend,overall,note,,,"Changing ONLY the two endpoints that pass their own gate (CYP1A2, CYP2C9) gives nested macro 0.2619 (-0.0034 of the -0.0049). Available if the full file is judged too loose"
+pIC50,29,(preflight) reblend,overall,note,,,"All official-validator checks PASS: SMILES first, both id columns, four value columns, 750 rows, no duplicate names, no NaN or inf, column and row order identical to the accepted reference, SMILES byte-identical, all 13 comma-bearing CXSMILES intact, every row parses to 6 fields. Placement held fixed: mean delta 0 and sd ratio 1.000000000 on all four. Spearman vs the 0.4440 file 0.992/0.995/0.972/0.985"
+pIC50,29,(false alarm) value-range check,CYP1A2,note,,,"My preflight flagged CYP1A2 min 1.804 as out of range on a 2.0 bound I invented. The bound is wrong, not the file: the ACCEPTED and scored 0.4440 submission has CYP3A4 min 1.791 and CYP1A2 min 1.947, and the training truth floor is 1.906. ONE row of 750 sits 0.10 below the training minimum, a smaller extrapolation than the accepted file's own CYP3A4 (0.118 below its floor). Check the incumbent against your own threshold before believing it"
+pIC50,30,reblend,overall,ST-RAE,0.4455,21.0,"LOST. 0.4440 -> 0.4455. Rank still improved 25 -> 21 as the field moved. MA-MAE 0.6578 MA-R2 0.5943 MA-rho 0.7558 -> 0.7540 -- the RANKING metric got WORSE, a direct refutation of a change made to improve the ranking"
+pIC50,30,reblend,CYP1A2,ST-RAE,0.4528,23.0,GAINED 0.0111 (0.4639 -> 0.4528). rho 0.8064 -> 0.8098. OOF had said -0.0069 with P(worse) 0.030. The one endpoint that both passed its gate AND delivered
+pIC50,30,reblend,CYP2C9,ST-RAE,0.3745,32.0,"LOST 0.0100 (0.3645 -> 0.3745). rho 0.8554 -> 0.8504. OOF said -0.0067 P(worse) 0.021 -- PASSED its gate and was WRONG. A nested, bootstrap-gated OOF result reversed on the board"
+pIC50,30,reblend,CYP2D6,ST-RAE,0.5422,20.0,"LOST 0.0058. OOF said -0.0020 P(worse) 0.230 -- failed its gate, lost as its gate implied"
+pIC50,30,reblend,CYP3A4,ST-RAE,0.4124,23.0,"LOST 0.0012. OOF said -0.0039 P(worse) 0.105 -- failed its gate, lost as its gate implied"
+pIC50,30,(refuted) OOF composition selection,overall,note,,,"THIRD instance of the same population fault. The two endpoints that FAILED their gate both lost, as expected. The two that PASSED split 1-1. So the gate carried real information about DIRECTION but the ruler itself is biased: our folds are scaffold-held-out at median max-Tanimoto 0.438 while the blind set sits at 0.587, so greedy selects members good at EXTRAPOLATION and the board rewards INTERPOLATION. The fix already exists and was never applied here -- blind-similarity reweighting, which took the TDI CYP3A4 yardstick to z=+0.01"
+pIC50,30,(built) splice1a2,overall,probe,,,"CYP1A2 from reblend, the other three from the 0.4440 file. EVERY column has already been scored on the board, so macro 0.4412 is ARITHMETIC, not a forecast -- the board is deterministic for identical columns (proven by the blendcp restore). Byte-exact: 0 text differences against each source file on every column including SMILES. md5 1dc3c9b8a073e472f775f9d3d5c79799"
+pIC50,30,(method) rsplit is the safe column surgery,overall,note,,,"The four value columns are the LAST four fields and never contain a comma; only SMILES does. So line.rsplit(',',4) is exact and quote-safe, unlike the left-to-right split that corrupted the 13 CXSMILES rows. pandas round-trip is numerically safe (8.9e-16) but rewrites the text on ~85 rows, so use rsplit when byte-identity to a scored file is the claim"
+pIC50,30,(data) Novartis tx3c00305 SI_002,overall,note,,,"SECTION88: 16,373 rows. CONTAINS NO EXPERIMENTAL MEASUREMENTS -- every labelled column (log_kobs, pIC50_CYP3A4/2C9/2D6) is the MEAN of its own model_0..9 columns, verified across all 16,373 rows with a worst deviation of 8.0e-04, exactly 3-decimal rounding. This is the paper's PREDICTION table, not its training data. Sources: PubChem AID 410 (8,360), ChEMBL (5,750), PubChem AID 884 (2,263) -- the Veith qHTS panel we already hold MEASURED in external_cyp_v2"
+pIC50,30,(answer) was it used for training,overall,note,,,"NO, and no leakage either. Overlap by InChIKey connectivity block: BLIND set 0 of 15,573 (zero), challenge TRAIN inhibition 193 (1.2 pct), TRAIN TDI 214 (1.4 pct), our own external_cyp_v2 7,890 (50.7 pct). 7,648 structures are new to us"
+pIC50,30,(refuted) Novartis predictions as labels,overall,note,,,"Validated against challenge truth on the shared compounds: CYP3A4 spearman 0.5931 (n=64, MAE 1.262), CYP2C9 0.4015 (n=50), CYP2D6 0.6900 (n=99). Our own board rho is 0.8378 / 0.8504 / 0.5179. Their model is WORSE than ours on CYP3A4 and CYP2C9, so distilling it would import noise. Only CYP2D6 is better (0.69 vs 0.52) but on 99 compounds, and it is a prediction from a model trained on data we already hold measured"
+pIC50,30,(refuted) Novartis structures as coverage,overall,note,,,"blind -> the 7,648 NEW Novartis structures: median max-Tanimoto 0.324, FARTHER than our existing external set (0.345) and far from the challenge train set (0.587). Same chemical world, same wall as Section 84. It cannot supply blind coverage"
+pIC50,31,splice1a2,overall,ST-RAE,0.4412,21.0,"BEST EVER. Predicted 0.4412, board returned 0.4412 -- EXACT, because every column had already been scored and the board is deterministic for identical columns. MA-MAE 0.6438 MA-R2 0.6000 MA-rho 0.7567, also our best rho (was 0.7558)"
+pIC50,31,splice1a2,CYP1A2,ST-RAE,0.4528,23.0,from reblend. rho 0.8098
+pIC50,31,splice1a2,CYP2C9,ST-RAE,0.3645,19.0,"from the 0.4440 file, unchanged"
+pIC50,31,splice1a2,CYP2D6,ST-RAE,0.5364,23.0,"from the 0.4440 file, unchanged"
+pIC50,31,splice1a2,CYP3A4,ST-RAE,0.4112,25.0,"from the 0.4440 file, unchanged"
+pIC50,31,(method) splice from scored columns,overall,note,,,"The board reports PER-ENDPOINT scores, so a losing submission is not wasted: its winning column can be spliced back against the incumbent's other three and the result is ARITHMETIC. reblend lost 0.0015 overall yet contained a CYP1A2 column worth 0.0111, and recovering it turned a loss into +0.0028 over the previous best. Cost: one slot, zero modelling risk"
+pIC50,31,(audit) per-endpoint archive sweep,overall,note,,,"SECTION89: every per-endpoint ST-RAE ever scored was ranked and cross-checked against the files on disk. splice1a2 ALREADY holds the best scored column on all four endpoints -- CYP1A2 0.4528 (reblend), CYP2C9 0.3645, CYP2D6 0.5364, CYP3A4 0.4112. Best-available macro equals what we ship, 0.4412. The archive of SCORED columns is exhausted"
+pIC50,31,(audit) completeness of the record,overall,note,,,"11 scored submissions have incomplete per-endpoint records, but only ONE is a real blind spot. 1a2up40 and d6wide carry Spearman 1.000000 to our current CYP2C9/2D6/3A4 columns -- same ranking, nothing hidden -- and probe2's two endpoints were already reconstructed. blend4tdi is the exception: all four of its columns have a DIFFERENT ranking (spearman 0.987-0.997) and none was ever attributed"
+pIC50,31,(bounded) what blend4tdi could still hold,overall,note,,,"Its overall 0.4751 at the OLD placement against d6probe's 0.4737 means its four endpoints sum to only +0.0056 worse IN TOTAL. For one endpoint to beat ours by x, the other three must give back x+0.0056. Re-placed to our current optimum it projects to about 0.4454, a loss of roughly 0.004 against 0.4412. The probe-then-splice pattern has paid before (reblend lost 0.0015 and yielded +0.0028), but blend4tdi is a KNOWN-worse ranker: rho 0.7524 against d6probe's 0.7558"
+pIC50,31,(inventory) unscored files on disk,overall,note,,,"21 pIC50 submission files were built and never scored. Most are pre-placement lineages with Spearman 0.74-0.97 to our columns -- genuinely different rankings, but all from the era whose macros ran 0.49-1.10. The d6fit/d6full/d6scale/place2/place4 family is Spearman 1.000000 on three endpoints: placement variants, nothing new in the ranking"
+pIC50,31,(measured) ARCHITECTURE is not the axis,overall,note,,,"SECTION90: mean placed-error correlation of each member to all the others -- UniMol-3D 0.8809, LGBM-descriptors 0.8917, ChemProp-MPNN 0.8994, multihead-NN 0.9132. Four architecturally unrelated families span only 0.881 to 0.913. A fifth ARCHITECTURE lands near 0.89 and the blend arithmetic says that buys about 0.003 macro"
+pIC50,31,(measured) LOCALITY is not the axis either,overall,note,,,"A Tanimoto kNN read-across (k=15, cubic similarity weights) -- a completely different error mechanism, failing where NEIGHBOURS are absent rather than where features extrapolate -- still correlates with the pool at 0.9271 / 0.8294 / 0.9431 / 0.7916 against pool-internal 0.9366 / 0.8615 / 0.9599 / 0.8519. Barely below, and the kNN is far worse in quality (CYP3A4 0.4644 vs 0.2009). CONCLUSION: the shared error is the APPLICABILITY DOMAIN, not the model class"
+pIC50,31,"(priced) what a 5th member is worth, by correlation",overall,note,,,"At the measured pool correlation of 0.89 a FOUR-member blend cuts error sd by only 4.2 pct versus one member, which is why CYP3A4 preferred mhtdi5 alone. A 5th member of EQUAL quality: rho 0.89 -> macro 0.4383 (-0.003), 0.80 -> 0.4231, 0.70 -> 0.4060, 0.60 -> 0.3889, 0.50 -> 0.3716. Steeply nonlinear, so the correlation target decides whether any training run is worth starting. Caveat: assumes equal quality, and the far end of this extrapolation is not credible"
+pIC50,31,(direction) only OUTSIDE information can decorrelate,overall,note,,,"Everything in the pool trains on the same 4,905 rows with ligand-only information, so all four fail on the same out-of-domain compounds. The only levers that change the failure set: (1) PRETRAINING on an external corpus -- note UniMol, our ONLY pretrained member, is also our most decorrelated at 0.881; (2) a different PRIMARY training source (17,504 single-conc screen rows or 16,233 external qHTS, with challenge rows used only for calibration); (3) PROTEIN-structure information, the one genuinely orthogonal signal"

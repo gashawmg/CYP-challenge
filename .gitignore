@@ -1,0 +1,59 @@
+# ---------------------------------------------------------------------------
+# Trained weights and checkpoints -- 15 GB, regenerable from scripts/ + data/.
+# ---------------------------------------------------------------------------
+models_*/
+checkpoints/
+Kaggle_out/
+*.pt
+*.ckpt
+*.pkl
+*.npy
+*.npz
+
+# ---------------------------------------------------------------------------
+# Derived prediction matrices. Large, regenerable, and not useful to a reader
+# without the weights that produced them.
+# ---------------------------------------------------------------------------
+oof_*.csv
+pred_*.csv
+predictions_*.csv
+testscores_*.csv
+features/
+downloaded/
+
+# ---------------------------------------------------------------------------
+# Challenge data. Redistribution terms are the organisers' to set, not ours --
+# README says where to fetch it. Do not commit until that is checked.
+# ---------------------------------------------------------------------------
+data/
+
+# Internal 1,000-compound holdout carved out of TRAIN. Verified to contain no
+# blind compounds, but it is still derived challenge data and labelled private.
+.eval_private/
+
+# ---------------------------------------------------------------------------
+# artifacts/ holds ~300 files; only the submissions and the ledger are kept.
+# The ledger is the project's primary record and must stay in version control.
+# ---------------------------------------------------------------------------
+artifacts/*
+!artifacts/submission_*.csv
+!artifacts/submissions.csv
+!artifacts/folds.csv
+!artifacts/folds_tdi.csv
+
+# Superseded candidates are kept on disk so a file cannot be submitted twice by
+# accident, but they are noise in a repository.
+artifacts/superseded/
+_superseded/
+
+# ---------------------------------------------------------------------------
+# Scratch
+# ---------------------------------------------------------------------------
+__pycache__/
+*.py[cod]
+.ipynb_checkpoints/
+figures/
+*.log
+.DS_Store
+.venv/
+venv/

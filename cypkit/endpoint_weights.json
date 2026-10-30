@@ -1,0 +1,26 @@
+{
+  "CYP1A2": {
+    "interval_power": 1.0,
+    "censored_weight": 0.35,
+    "target_share": 0.4219,
+    "achieved": 0.4344
+  },
+  "CYP2C9": {
+    "interval_power": 0.0,
+    "censored_weight": 0.15,
+    "target_share": 0.2607,
+    "achieved": 0.2424
+  },
+  "CYP2D6": {
+    "interval_power": 1.0,
+    "censored_weight": 1.4,
+    "target_share": 0.7249,
+    "achieved": 0.7328
+  },
+  "CYP3A4": {
+    "interval_power": 0.75,
+    "censored_weight": 0.25,
+    "target_share": 0.3129,
+    "achieved": 0.3123
+  }
+}

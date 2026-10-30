@@ -1,0 +1,43 @@
+# Environment for the TABULAR track:
+#   scripts/eval_service.py      the private scoring service
+#   scripts/build_features.py    the representation cache
+#   scripts/fit_tabular.py       TabM / HGB / ridge / SVR / RF / TabPFN heads
+#
+# This is deliberately SEPARATE from the chemprop environment (admet_gpu). None of these
+# three scripts imports chemprop or lightning, so there is no reason to risk a working
+# chemprop install to get them running. Keep admet_gpu for train_cyp_clean.py.
+#
+#   conda create -n cyp_tab python=3.11 -y
+#   conda activate cyp_tab
+#   pip install -r requirements-tabular.txt
+#   pip install torch --index-url https://download.pytorch.org/whl/cu124
+#
+# torch is NOT pinned here on purpose: the CUDA build has to match the driver, and the
+# wheel index above is the one to use for an RTX 3060 (Ampere, CUDA 12.x). If that index
+# 404s, take the exact command from https://pytorch.org/get-started/locally/ instead of
+# letting pip install the CPU build silently.
+#
+# Verified working together on python 3.11 with numpy 2.4.4 / pandas 3.0.2.
+
+# --- required by all three scripts -------------------------------------------------
+numpy>=1.26
+pandas>=2.0
+rdkit>=2024.03.1          # scaffolds, descriptors, fingerprints
+
+# --- required by fit_tabular.py ------------------------------------------------------
+scikit-learn>=1.4         # hgb / rf / ridge / svr, and TruncatedSVD for --svd
+# torch                   # installed separately above; needed only for --model tabm
+
+# --- optional feature blocks ---------------------------------------------------------
+# Each is skipped cleanly if absent; `build_features.py --probe` reports what you have.
+mordredcommunity>=2.0.6   # 1,613 Mordred 2D descriptors.
+                          # NOT the `mordred` package: that one is abandoned and fails
+                          # on numpy>=1.24. The community fork keeps the import name.
+
+# --- optional, install only if you want them -----------------------------------------
+# tabpfn>=2.0             # tabular foundation model; pure python + torch, 1k-10k rows,
+#                         # which is exactly this project's per-endpoint size
+# transformers>=4.40      # frozen ChemBERTa embeddings
+# unimol_tools            # frozen Uni-Mol embeddings. Heaviest of the three and the most
+#                         # likely to drag in conflicting pins -- install it last, and
+#                         # only in this env, never in admet_gpu

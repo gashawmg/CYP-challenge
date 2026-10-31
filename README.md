@@ -2,10 +2,10 @@
 
 Two tracks, one shared daily submission slot:
 
-| track | metric | best |  
-|-------|--------|------|
-| Direct inhibition (pIC50) | MA-ST-RAE, lower better | **0.4412**| 
-| TDI (classification) | MA-MCC, higher better | **0.3760**| 
+| track | metric | best | Rank| 
+|-------|--------|------|-----|
+| Direct inhibition (pIC50) | MA-ST-RAE, lower better | **0.4407**| 42 | 
+| TDI (classification) | MA-MCC, higher better | **0.3788**| 25 |
 
 Predict pIC50 for 750 blind compounds across CYP1A2, CYP2C9, CYP2D6 and CYP3A4, scored by
 a soft-thresholded relative absolute error that charges nothing inside a compound's
